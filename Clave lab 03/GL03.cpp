@@ -23,7 +23,7 @@ int Vacio(Arbol r);
 void InOrden(Arbol, void (*func)(int *));
 void Podar(Arbol *a);
 void Mostrar(int *d);
-void PostOrden(Arbol, void (*func)(int *));
+void PreOrden(Arbol, void (*func)(int *));
 
 int multiNodos(Arbol a);
 
@@ -42,7 +42,7 @@ int main()
 
 	printf("\n\nArbol en PostOrden con la funcion Multiple nodo: ");
 	multiNodos(ArbolInt);
-	PostOrden(ArbolInt, Mostrar);
+	PreOrden(ArbolInt, Mostrar);
 
     	return 0;
 
@@ -140,7 +140,7 @@ int multiNodos(Arbol a)
     }
 }
 
-void PostOrden(Arbol a, void (*func)(int *))
+void PreOrden(Arbol a, void (*func)(int *))
 {
 	func(&(a->dato));
 	if (a->izquierdo)
